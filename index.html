@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Ícones do Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -25,6 +27,7 @@
   </head>
 
   <body>
+    <!-- NAVEGAÇÃO FIXA -->
     <header>
       <h1>RD Representação Comercial</h1>
       <nav>
@@ -36,6 +39,7 @@
       </nav>
     </header>
 
+    <!-- SEÇÃO PRINCIPAL COM CARROSSEL DE PRODUTOS -->
     <section class="container">
       <div class="list">
         <div class="item active">
@@ -87,6 +91,8 @@
           </div>
         </div>
       </div>
+      
+      <!-- Botões de navegação do carrossel -->
       <div class="arrows">
         <button id="prev">
           <img src="img/arrow.png" alt="seta esquerda" />
@@ -96,6 +102,7 @@
         </button>
       </div>
 
+      <!-- Indicadores: número e bolinhas de progresso -->
       <div class="indicators">
         <div class="number">01</div>
         <ul>
@@ -104,15 +111,94 @@
           <li></li>
         </ul>
       </div>
+
+      <div class="end">
+        <p class="description-end"></p>
+      </div>
     </section>
 
-<a href="https://wa.me/5500999999999?text=Olá!%20Vim%20pelo%20site" class="btn-flutuante whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- Seção Principal do Rodapé -->
+        <div class="footer-main">
+          <!-- Logo/Marca -->
+          <div class="footer-brand">
+            <h3>RD Comercial</h3>
+            <p>Qualidade em esquadrias</p>
+          </div>
 
-<a href="https://www.instagram.com/SEU_PERFIL/" class="btn-flutuante instagram" target="_blank">
-    <i class="fab fa-instagram"></i>
-</a>
+          <!-- Coluna 1: Sobre -->
+          <div class="footer-column">
+            <h4>Sobre Nós</h4>
+            <ul>
+              <li><a href="#home">Nossa História</a></li>
+              <li><a href="#about">Missão e Valores</a></li>
+              <li><a href="#team">Nossa Equipe</a></li>
+            </ul>
+          </div>
+
+          <!-- Coluna 2: Suporte -->
+          <div class="footer-column">
+            <h4>Suporte</h4>
+            <ul>
+              <li><a href="#contact">Fale Conosco</a></li>
+              <li><a href="#faq">Dúvidas Frequentes</a></li>
+            </ul>
+          </div>
+
+          <!-- Coluna 3: Redes Sociais -->
+          <div class="footer-social">
+            <h4>Siga-nos</h4>
+            <div class="social-icons">
+              <a href="https://instagram.com" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/5500999999999?text=Olá!%20Vim%20pelo%20site"
+                class=""
+                target="_blank">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" title="Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha Divisória -->
+        <div class="footer-divider"></div>
+
+        <!-- Rodapé Inferior -->
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 RD Representação Comercial. Todos os direitos
+            reservados.
+          </p>
+          <div class="footer-links">
+            <a href="#privacy">Política de Privacidade</a>
+            <a href="#terms">Termos de Uso</a>
+            <a href="#cookies">Preferências de Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ICONÉS FLUTUANTE-->
+    <a
+      href="https://wa.me/5500999999999?text=Olá!%20Vim%20pelo%20site"
+      class="btn-flutuante whatsapp"
+      target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a
+      href="https://www.instagram.com/SEU_PERFIL/"
+      class="btn-flutuante instagram"
+      target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
 
     <script src="scripts.js"></script>
   </body>

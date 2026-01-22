@@ -1,18 +1,20 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  font-family: "Poppins", sans-serif;
+  margin: 0;              /* Remove margens padrão */
+  padding: 0;             /* Remove espaçamentos padrão */
+  box-sizing: border-box;  /* Inclui border e padding na largura total */
+  list-style: none;        /* Remove bullets das listas */
+  font-family: "Poppins", sans-serif; /* Fonte padrão */
 }
 
+/* Configurações do corpo da página */
 body {
   background-color: #000;
   color: #1A1A1B;
   font-size: 16px;
-  overflow: hidden;
+  
 }
 
+/* CABEÇALHO */
 header {
   position: fixed;
   width: 80vw;
@@ -24,6 +26,7 @@ header {
   gap: 10%;
   z-index: 2;
 
+  /* Gradiente animado no título */
   & h1 {
   background: linear-gradient(45deg, #1A1A1B, #ffd93d, #A8A9AD);
   background-size: 300% 300%;
@@ -35,6 +38,7 @@ header {
   font-size: 2.7em;
 }
 
+/* Animação do gradiente pulsante */
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -52,6 +56,7 @@ header {
   }
 }
 
+/* SEÇÃO PRINCIPAL */
 section {
   background-image: radial-gradient(#FFFF, #A8A9AD);
   height: 100vh;
@@ -65,11 +70,11 @@ section {
 
     & .item {
       position: absolute;
-      inset: 0;
-      /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+      inset: 0;    /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
 
+      /* Imagem do produto */
       & .win-img {
-        position: absolute;
+        position: absolute;   
         top: 50%;
         transform: translateY(-50%);
         width: 70%;
@@ -92,8 +97,9 @@ section {
         }*/
       }
 
+      /* Texto e descrição */
       & .content {
-        position: absolute;
+        position: absolute;   
         right: 100px;
         width: 70%;
         height: 100%;
@@ -145,6 +151,7 @@ section {
     top: 50%;
   }
 
+  /* BOTÕES DE NAVEGAÇÃO DO CARROSSEL */
   .arrows {
     width: 70vw;
     position: absolute;
@@ -156,7 +163,7 @@ section {
 
     & button:nth-child(1) {
       & img {
-        transform: scale(-1);
+        transform: scale(-1);  /* Inverte seta esquerda */
       }
     }
 
@@ -179,11 +186,12 @@ section {
       &:hover {
         background: linear-gradient(135deg, rgba(255, 217, 61, 0.2), rgba(168, 169, 173, 0.1));
         box-shadow: 0 0 15px rgba(255, 217, 61, 0.4);
-        transform: scale(1.1);
+        transform: scale(1.1);  /* Aumenta ao passar mouse */
       }
     }
   }
 
+  /* INDICADORES DO CARROSSEL */
   .indicators {
     position: absolute;
     top: 50%;
@@ -227,10 +235,10 @@ section {
   }
 }
 
-/* Estilo Base para os Botões Flutuantes */
+/* BOTÕES FLUTUANTES DE CONTATO */
 .btn-flutuante {
     position: fixed;
-    right: 40px; /* Distância da direita */
+    right: 40px;
     width: 60px;
     height: 60px;
     border-radius: 50px;
@@ -249,20 +257,19 @@ section {
     transform: scale(1.1);
 }
 
-/* Posição do WhatsApp (Fica em cima) */
+/* WhatsApp - Botão superior */
 .whatsapp {
     bottom: 115px; /* Altura maior para dar espaço ao de baixo */
     background-color: #25d366;
 }
 
-/* Posição do Instagram (Fica em baixo) */
+/* Instagram - Botão inferior */
 .instagram {
-    bottom: 40px; 
-    /* Degradê oficial do Instagram */
+    bottom: 40px;            /* Posicionado mais abaixo */
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
-/* Efeito de pulso apenas no Whatsapp (opcional) */
+/* Efeito de pulso do WhatsApp */
 .whatsapp::after {
     content: "";
     position: absolute;
@@ -273,7 +280,7 @@ section {
     animation: pulse-ig 2s infinite;
 }
 
-/* Efeito de pulso apenas no Instagram (opcional) */
+/* Efeito de pulso do Instagram */
 .instagram::after {
     content: "";
     position: absolute;
@@ -284,14 +291,16 @@ section {
     animation: pulse-ig 2s infinite;
 }
 
+/* Animação de pulso expandindo */
 @keyframes pulse-ig {
     0% { transform: scale(1); opacity: 1; }
     100% { transform: scale(1.5); opacity: 0; }
 }
 
+/* ANIMAÇÕES DO CARROSSEL  */
 section {
   & .list {
-    --calculation: 1;
+    --calculation: 1;        /* Variável CSS para direção */
     & .item {
       transform: translateX(calc(100vw * var(--calculation)));
       transition: 0.5s;
@@ -339,5 +348,173 @@ section {
         }
       }
     }
+  }
+}
+
+/* --- RODAPÉ ---*/
+.footer {
+  background: linear-gradient(135deg, #1a3a3a 0%, #0d2626 100%);
+  color: #e0e0e0;
+  padding: 60px 0 0;
+  margin-top: 60px;
+  border-top: 2px solid #ffd93d;
+}
+
+.footer-content {
+  max-width: 1200px;              /* Limita largura */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+  padding: 40px 0;
+}
+
+/* Logo/Marca da empresa */
+.footer-brand h3 {
+  font-size: 1.8em;
+  color: #ffd93d;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer-brand p {
+  color: #a0a0a0;
+  font-size: 0.95em;
+}
+
+/* Colunas de links do rodapé */
+.footer-column h4 {
+  color: #ffd93d;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95em;
+}
+
+.footer-column a:hover {
+  color: #ffd93d;
+  margin-left: 8px;
+}
+
+/* Seção de Redes Sociais */
+.footer-social h4 {
+  color: #ffd93d;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 217, 61, 0.1);
+  color: #ffd93d;
+  border-radius: 50%;
+  border: 2px solid #ffd93d;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+}
+
+.social-icons a:hover {
+  background-color: #ffd93d;
+  color: #0d2626;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(255, 217, 61, 0.3);
+}
+
+/* Linha decorativa divisória */
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ffd93d, transparent);
+  margin: 30px 0;
+}
+
+/* Rodapé inferior com copyright e links */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px 0;
+  font-size: 0.9em;
+  color: #a0a0a0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffd93d;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);  /* 2 colunas em tablets */
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;                 /* Empilha conteúdo */
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* RESPONSIVIDADE - MOBILE  */
+@media (max-width: 480px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85em;
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    font-size: 1em;
   }
 }
