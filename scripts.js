@@ -14,7 +14,13 @@ let lastPosition = items.length - 1; // Última posição
 function setSlider() {
   // Remove classe ativa do item anterior
   let itemOld = container.querySelector(".list .item.active");
-  itemOld.classList.remove("active");
+  if (itemOld) {
+    itemOld.classList.remove("active");
+    // Remove animation classes after a delay
+    setTimeout(() => {
+      itemOld.classList.remove("slide-left", "slide-right");
+    }, 600);
+  }
 
   // Remove classe ativa da bolinha anterior
   let dotsOld = indicator.querySelector("ul li.active");
@@ -31,6 +37,9 @@ nextButton.onclick = () => {
   // Volta ao início
   active = active + 1 > lastPosition ? 0 : active + 1;
   setSlider();
+
+  // Add directional class and active class
+  items[active].classList.add("slide-right");
   items[active].classList.add("active");
 };
 
@@ -41,5 +50,41 @@ prevButton.onclick = () => {
   // Volta ao fim
   active = active - 1 < firstPosition ? lastPosition : active - 1;
   setSlider();
+
+  // Add directional class and active class
+  items[active].classList.add("slide-left");
   items[active].classList.add("active");
 };
+
+/* --- THEME SWITCHER LOGIC --- */
+const toggleButton = document.getElementById("theme-toggle");
+const toggleIcon = toggleButton.querySelector("i");
+const htmlElement = document.documentElement;
+
+// Function to set theme
+function setTheme(theme) {
+  htmlElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+
+  // Update icon
+  if (theme === "light") {
+    toggleIcon.classList.remove("fa-sun");
+    toggleIcon.classList.add("fa-moon");
+  } else {
+    toggleIcon.classList.remove("fa-moon");
+    toggleIcon.classList.add("fa-sun");
+  }
+}
+
+// Check local storage on load
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  setTheme(savedTheme);
+}
+
+// Toggle event
+toggleButton.addEventListener("click", () => {
+  const currentTheme = htmlElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+});
