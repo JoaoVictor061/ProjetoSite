@@ -80,6 +80,8 @@ function setTheme(theme) {
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
   setTheme(savedTheme);
+} else {
+  setTheme("dark");
 }
 
 // Toggle event
@@ -88,3 +90,46 @@ toggleButton.addEventListener("click", () => {
   const newTheme = currentTheme === "light" ? "dark" : "light";
   setTheme(newTheme);
 });
+
+/* --- MOBILE MENU TOGGLE --- */
+const menuToggle = document.getElementById("menu-toggle");
+const mobileNav = document.getElementById("mobile-nav");
+
+menuToggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("active");
+});
+
+// Fechar menu ao clicar em um item
+mobileNav.addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    mobileNav.classList.remove("active");
+  }
+});
+
+/* --- TOUCH SUPPORT FOR CAROUSEL --- */
+let startX = 0;
+let endX = 0;
+
+container.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+container.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diffX = startX - endX;
+  const threshold = 50; // Minimum swipe distance
+
+  if (Math.abs(diffX) > threshold) {
+    if (diffX > 0) {
+      // Swipe left - next
+      nextButton.click();
+    } else {
+      // Swipe right - prev
+      prevButton.click();
+    }
+  }
+}
