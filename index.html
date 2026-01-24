@@ -27,16 +27,30 @@
   <header>
     <div class="header-inner">
       <h1>RD Representação Comercial</h1>
-      <nav>
+      <nav id="nav-menu">
         <ul>
           <li>Home</li>
           <li>Produtos</li>
           <li>Fale Conosco</li>
         </ul>
       </nav>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar Tema">
-        <i class="fas fa-sun"></i>
-      </button>
+      <div class="header-controls">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar Tema">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Menu Móvel -->
+      <nav id="mobile-nav" class="mobile-nav">
+        <ul>
+          <li>Home</li>
+          <li>Produtos</li>
+          <li>Fale Conosco</li>
+        </ul>
+      </nav>
     </div>
   </header>
 
@@ -124,6 +138,57 @@
     </div>
   </section>
 
+  <!-- SEÇÃO SOBRE A EMPRESA -->
+  <section class="about-company">
+    <div class="about-container">
+      <div class="about-header">
+        <h2>Sobre a RD Representação Comercial</h2>
+        <div class="about-divider"></div>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Qualidade e Confiança em Esquadrias</h3>
+          <p>
+            A RD Representação Comercial é uma empresa líder no mercado de esquadrias e janelas de alumínio, 
+            oferecendo soluções inovadoras e de alta qualidade para residências e comerciais. Com mais de 10 anos 
+            de experiência, consolidamos nossa reputação através da excelência em produtos e serviços.
+          </p>
+          <p>
+            Nosso compromisso é fornecer esquadrias que combinam durabilidade, estética moderna e funcionalidade, 
+            sempre respeitando o melhor custo-benefício para nossos clientes.
+          </p>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-card">
+            <i class="fas fa-check-circle"></i>
+            <h4>Produtos Premium</h4>
+            <p>Seleção rigorosa de materiais de primeira qualidade</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-headset"></i>
+            <h4>Suporte Completo</h4>
+            <p>Atendimento especializado e consultoria técnica</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-truck"></i>
+            <h4>Entrega Rápida</h4>
+            <p>Logística eficiente em toda a região</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Garantia</h4>
+            <p>Cobertura completa em todos os produtos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- RODAPÉ DA PÁGINA -->
   <footer class="footer">
     <div class="footer-content">
@@ -194,7 +259,7 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <a href="https://www.instagram.com/SEU_PERFIL/" class="btn-flutuante instagram" target="_blank">
+  <a href="https://www.instagram.com/PERFIL/" class="btn-flutuante instagram" target="_blank">
     <i class="fab fa-instagram"></i>
   </a>
 
