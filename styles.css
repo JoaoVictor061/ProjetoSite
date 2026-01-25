@@ -1125,3 +1125,26 @@ section .list .item.active .content .information {
   color: var(--color-primary);
   transform: rotate(15deg);
 }
+
+/* MENU TOGGLE BUTTON */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-toggle:hover {
+  background-color: var(--bg-surface);
+  color: var(--color-primary);
+}
