@@ -1,269 +1,342 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Ícones do Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
-  <!-- Ícones do Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+    <title>RD Representação Comercial</title>
+  </head>
 
-  <title>RD Representação Comercial</title>
-</head>
-
-<body>
-  <!-- NAVEGAÇÃO FIXA -->
-  <header>
-    <div class="header-inner">
-      <h1>RD Representação Comercial</h1>
-      <nav id="nav-menu">
-        <ul>
-          <li>Home</li>
-          <li>Produtos</li>
-          <li>Fale Conosco</li>
-        </ul>
-      </nav>
-      <div class="header-controls">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar Tema">
-          <i class="fas fa-sun"></i>
-        </button>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-
-      <!-- Menu Móvel -->
-      <nav id="mobile-nav" class="mobile-nav">
-        <ul>
-          <li>Home</li>
-          <li>Produtos</li>
-          <li>Fale Conosco</li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- SEÇÃO PRINCIPAL COM CARROSSEL DE PRODUTOS -->
-  <section class="container">
-    <div class="list">
-      <div class="item active">
-        <div class="item-content-wrapper">
-          <div class="win-img">
-            <img src="img/janela01.jpg" alt="" />
-          </div>
-          <div class="content">
-            <p class="win-information">Janela de Alumínio</p>
-            <h2>Vitrô 3 Folhas</h2>
-            <p class="description">
-              Janela de correr de três folhas em alumínio preto, com uma grade
-              de segurança integrada em um padrão geométrico de barras verticais
-              e horizontais.
-            </p>
-            <button class="information">Saiba Mais</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-content-wrapper">
-          <div class="win-img">
-            <img src="img/janela02.png" alt="" />
-          </div>
-          <div class="content">
-            <p class="win-information">Janela de Alumínio</p>
-            <h2>Vitrô 2 Folhas</h2>
-            <p class="description">
-              Janela de alumínio preto com duas folhas de correr. A imagem
-              destaca o design moderno e funcional da esquadria, com vidro
-              transparente e puxadores integrados.
-            </p>
-            <button class="information">Saiba Mais</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-content-wrapper">
-          <div class="win-img">
-            <img src="img/janela03.png" alt="" />
-          </div>
-          <div class="content">
-            <p class="win-information">Linha 25 Alumínio Preto</p>
-            <h2>Porta Lambril</h2>
-            <p class="description">
-              Porta de entrada moderna em preto fosco, destacada por frisos
-              horizontais e um imponente puxador vertical de metal prateado. A
-              peça isolada em fundo branco exibe um design contemporâneo e
-              sofisticado.
-            </p>
-            <button class="information">Saiba Mais</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Botões de navegação do carrossel -->
-    <div class="arrows">
-      <button id="prev">
-        <img src="img/arrow.png" alt="seta esquerda" />
-      </button>
-      <button id="next">
-        <img src="img/arrow.png" alt="seta direita" />
-      </button>
-    </div>
-
-    <!-- Indicadores: número e bolinhas de progresso -->
-    <div class="indicators">
-      <div class="number">01</div>
-      <ul>
-        <li class="active"></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-
-    <div class="end">
-      <p class="description-end"></p>
-    </div>
-  </section>
-
-  <!-- SEÇÃO SOBRE A EMPRESA -->
-  <section class="about-company">
-    <div class="about-container">
-      <div class="about-header">
-        <h2>Sobre a RD Representação Comercial</h2>
-        <div class="about-divider"></div>
-      </div>
-
-      <div class="about-content">
-        <div class="about-text">
-          <h3>Qualidade e Confiança em Esquadrias</h3>
-          <p>
-            A RD Representação Comercial é uma empresa líder no mercado de esquadrias e janelas de alumínio, 
-            oferecendo soluções inovadoras e de alta qualidade para residências e comerciais. Com mais de 10 anos 
-            de experiência, consolidamos nossa reputação através da excelência em produtos e serviços.
-          </p>
-          <p>
-            Nosso compromisso é fornecer esquadrias que combinam durabilidade, estética moderna e funcionalidade, 
-            sempre respeitando o melhor custo-benefício para nossos clientes.
-          </p>
-        </div>
-
-        <div class="about-features">
-          <div class="feature-card">
-            <i class="fas fa-check-circle"></i>
-            <h4>Produtos Premium</h4>
-            <p>Seleção rigorosa de materiais de primeira qualidade</p>
-          </div>
-
-          <div class="feature-card">
-            <i class="fas fa-headset"></i>
-            <h4>Suporte Completo</h4>
-            <p>Atendimento especializado e consultoria técnica</p>
-          </div>
-
-          <div class="feature-card">
-            <i class="fas fa-truck"></i>
-            <h4>Entrega Rápida</h4>
-            <p>Logística eficiente em toda a região</p>
-          </div>
-
-          <div class="feature-card">
-            <i class="fas fa-shield-alt"></i>
-            <h4>Garantia</h4>
-            <p>Cobertura completa em todos os produtos</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RODAPÉ DA PÁGINA -->
-  <footer class="footer">
-    <div class="footer-content">
-      <!-- Seção Principal do Rodapé -->
-      <div class="footer-main">
-        <!-- Logo/Marca -->
-        <div class="footer-brand">
-          <h3>RD Comercial</h3>
-          <p>Qualidade em esquadrias</p>
-        </div>
-
-        <!-- Coluna 1: Sobre -->
-        <div class="footer-column">
-          <h4>Sobre Nós</h4>
+  <body>
+    <!-- NAVEGAÇÃO FIXA -->
+    <header>
+      <div class="header-inner">
+        <h1>RD Representação Comercial</h1>
+        <nav id="nav-menu">
           <ul>
-            <li><a href="#home">Nossa História</a></li>
-            <li><a href="#about">Missão e Valores</a></li>
-            <li><a href="#team">Nossa Equipe</a></li>
+            <li>Home</li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li>Fale Conosco</li>
           </ul>
+        </nav>
+        <div class="header-controls">
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Alternar Tema"
+          >
+            <i class="fas fa-sun"></i>
+          </button>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
 
-        <!-- Coluna 2: Suporte -->
-        <div class="footer-column">
-          <h4>Suporte</h4>
+        <!-- Menu Móvel -->
+        <nav id="mobile-nav" class="mobile-nav">
           <ul>
-            <li><a href="#contact">Fale Conosco</a></li>
-            <li><a href="#faq">Dúvidas Frequentes</a></li>
+            <li>Home</li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li>Fale Conosco</li>
           </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- SEÇÃO PRINCIPAL COM CARROSSEL DE PRODUTOS -->
+    <section class="container">
+      <div class="list">
+        <div class="item active">
+          <div class="item-content-wrapper">
+            <div class="win-img">
+              <img src="img/serviço/img07.webp" alt="Porta de correr" />
+            </div>
+            <div class="content">
+              <p class="win-information">Sofisticação em Alumínio</p>
+              <h2>Porta de Correr</h2>
+              <p class="description">
+                Porta de correr de alto padrão com acabamento em preto fosco,
+                projetada para varandas e áreas de lazer que exigem máxima
+                amplitude, beleza e durabilidade.
+              </p>
+              <button class="information">Saiba Mais</button>
+            </div>
+          </div>
         </div>
 
-        <!-- Coluna 3: Redes Sociais -->
-        <div class="footer-social">
-          <h4>Siga-nos</h4>
-          <div class="social-icons">
-            <a href="https://instagram.com" target="_blank" title="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/5500999999999?text=Olá!%20Vim%20pelo%20site" class="" target="_blank">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://facebook.com" target="_blank" title="Facebook">
-              <i class="fab fa-facebook"></i>
-            </a>
+        <div class="item">
+          <div class="item-content-wrapper">
+            <div class="win-img">
+              <img src="img/serviço/img04.webp" alt="" />
+            </div>
+            <div class="content">
+              <p class="win-information">Cozinha Moderna</p>
+              <h2>Vitrô 4 folhas</h2>
+              <p class="description">
+                Janela de correr otimizada para bancadas, garantindo luz natural
+                e ventilação com um acabamento preto sofisticado que valoriza o
+                ambiente.
+              </p>
+              <button class="information">Saiba Mais</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-content-wrapper">
+            <div class="win-img">
+              <img src="img/serviço/img05.webp" alt="" />
+            </div>
+            <div class="content">
+              <p class="win-information">Design slim em alumínio</p>
+              <h2>Porta de Giro</h2>
+              <p class="description">
+                Porta de uma folha com vidro, combinando elegância e funcionalidade para dividir ambientes internos com leveza.
+              </p>
+              <button class="information">Saiba Mais</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Linha Divisória -->
-      <div class="footer-divider"></div>
+      <!-- Botões de navegação do carrossel -->
+      <div class="arrows">
+        <button id="prev">
+          <img src="img/arrow.png" alt="seta esquerda" />
+        </button>
+        <button id="next">
+          <img src="img/arrow.png" alt="seta direita" />
+        </button>
+      </div>
 
-      <!-- Rodapé Inferior -->
-      <div class="footer-bottom">
-        <p>
-          &copy; 2026 RD Representação Comercial. Todos os direitos
-          reservados.
-        </p>
-        <div class="footer-links">
-          <a href="#privacy">Política de Privacidade</a>
-          <a href="#terms">Termos de Uso</a>
-          <a href="#cookies">Preferências de Cookies</a>
+      <!-- Indicadores: número e bolinhas de progresso -->
+      <div class="indicators">
+        <div class="number">01</div>
+        <ul>
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <div class="end">
+        <p class="description-end"></p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE SERVIÇOS PREVIEW -->
+    <section class="services-preview">
+      <div class="container-align">
+        <div class="services-header">
+          <h2>Nossos Serviços</h2>
+          <p>
+            Conheça os serviços especializados que oferecemos para atender às
+            suas necessidades em esquadrias e janelas de alumínio.
+          </p>
+          <a href="servicos.html" class="information">Ver Todos os Serviços</a>
+        </div>
+
+        <div class="services-gallery-preview">
+          <div class="service-item">
+            <img src="img/serviço/img01.webp" alt="Serviço 1" />
+            <div class="service-overlay">
+              <h3>Instalação de Janelas</h3>
+              <p>Serviço profissional de instalação de janelas de alumínio.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img02.webp" alt="Serviço 2" />
+            <div class="service-overlay">
+              <h3>Manutenção de Portas</h3>
+              <p>Manutenção e reparo de portas de alumínio.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img18.jpeg" alt="Serviço 3" />
+            <div class="service-overlay">
+              <h3>Consultoria Técnica</h3>
+              <p>Consultoria especializada em esquadrias.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img04.webp" alt="Serviço 4" />
+            <div class="service-overlay">
+              <h3>Medidas e Orçamentos</h3>
+              <p>Medidas precisas e orçamentos detalhados.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img05.webp" alt="Serviço 5" />
+            <div class="service-overlay">
+              <h3>Atendimento Personalizado</h3>
+              <p>Antendimento profissional.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img06.webp" alt="Serviço 6" />
+            <div class="service-overlay">
+              <h3>Reparo de Esquadrias</h3>
+              <p>Reparo e restauração de esquadrias danificadas.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img07.webp" alt="Serviço 7" />
+            <div class="service-overlay">
+              <h3>Limpeza e Polimento</h3>
+              <p>Limpeza especializada e polimento de superfícies de alumínio.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img08.webp" alt="Serviço 8" />
+            <div class="service-overlay">
+              <h3>Substituição de Vidros</h3>
+              <p>Substituição de vidros danificados em janelas e portas.</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <img src="img/serviço/img10.webp" alt="Serviço 9" />
+            <div class="service-overlay">
+              <h3>Instalação de Acessórios</h3>
+              <p>Instalação de dobradiças, fechaduras e outros acessórios.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- ICONÉS FLUTUANTE-->
-  <a href="https://wa.me/5500999999999?text=Olá!%20Vim%20pelo%20site" class="btn-flutuante whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    <!-- SEÇÃO SOBRE A EMPRESA -->
+    <section class="about-company">
+      <div class="about-container">
+        <div class="about-header">
+          <h2>Sobre a RD Representação Comercial</h2>
+          <div class="about-divider"></div>
+        </div>
 
-  <a href="https://www.instagram.com/PERFIL/" class="btn-flutuante instagram" target="_blank">
-    <i class="fab fa-instagram"></i>
-  </a>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Qualidade e Confiança em Esquadrias</h3>
+            <p>
+              A RD Representação Comercial é uma empresa líder no mercado de
+              esquadrias e janelas de alumínio, oferecendo soluções inovadoras e
+              de alta qualidade para residências e comerciais. Com mais de 10
+              anos de experiência, consolidamos nossa reputação através da
+              excelência em produtos e serviços.
+            </p>
+            <p>
+              Nosso compromisso é fornecer esquadrias que combinam durabilidade,
+              estética moderna e funcionalidade, sempre respeitando o melhor
+              custo-benefício para nossos clientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="scripts.js"></script>
-</body>
+    <!-- RODAPÉ DA PÁGINA -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- Seção Principal do Rodapé -->
+        <div class="footer-main">
+          <!-- Logo/Marca -->
+          <div class="footer-brand">
+            <h3>RD Comercial</h3>
+            <p>Qualidade em esquadrias</p>
+          </div>
 
+          <!-- Coluna 1: Sobre -->
+          <div class="footer-column">
+            <h4>Sobre Nós</h4>
+            <ul>
+              <li><a href="#home">Nossa História</a></li>
+              <li><a href="#about">Missão e Valores</a></li>
+              <li><a href="#team">Nossa Equipe</a></li>
+            </ul>
+          </div>
+
+          <!-- Coluna 2: Suporte -->
+          <div class="footer-column">
+            <h4>Suporte</h4>
+            <ul>
+              <li><a href="#contact">Fale Conosco</a></li>
+              <li><a href="#faq">Dúvidas Frequentes</a></li>
+            </ul>
+          </div>
+
+          <!-- Coluna 3: Redes Sociais -->
+          <div class="footer-social">
+            <h4>Siga-nos</h4>
+            <div class="social-icons">
+              <a href="https://instagram.com" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://wa.me/5500999999999?text=Olá!%20Vim%20pelo%20site"
+                class=""
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://facebook.com" target="_blank" title="Facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha Divisória -->
+        <div class="footer-divider"></div>
+
+        <!-- Rodapé Inferior -->
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 RD Representação Comercial. Todos os direitos
+            reservados.
+          </p>
+          <div class="footer-links">
+            <a href="#privacy">Política de Privacidade</a>
+            <a href="#terms">Termos de Uso</a>
+            <a href="#cookies">Preferências de Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ICONÉS FLUTUANTE-->
+    <a
+      href="https://wa.me/5500999999999?text=Olá!%20Vim%20pelo%20site"
+      class="btn-flutuante whatsapp"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a
+      href="https://www.instagram.com/PERFIL/"
+      class="btn-flutuante instagram"
+      target="_blank"
+    >
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <script src="scripts.js"></script>
+  </body>
 </html>
