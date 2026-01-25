@@ -366,11 +366,11 @@ section .list .item .content .information:hover {
 }
 
 .arrows #prev {
-  margin-left: -45px;
+  margin-left: -30px;
 }
 
 .arrows #next {
-  margin-right: -45px;
+  margin-right: -30px;
 }
 
 .arrows button#prev img {
@@ -760,11 +760,30 @@ section .list .item.active .content .information {
 
   section .list .item .content {
     align-items: center;
+    gap: 10px;
   }
 
   section .list .item .content .description {
     text-align: center;
     font-size: 0.9rem;
+  }
+
+  .arrows {
+    left: var(--container-padding);
+    width: calc(100% - 2 * var(--container-padding));
+    transform: none;
+  }
+
+  .arrows #prev {
+    margin-left: 0;
+  }
+
+  .arrows #next {
+    margin-right: 0;
+  }
+
+  .indicators {
+    bottom: 20px;
   }
 
   .footer-main {
