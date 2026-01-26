@@ -62,58 +62,93 @@ if (container) {
 /* --- THEME SWITCHER LOGIC --- */
 document.addEventListener("DOMContentLoaded", () => {
   const toggleButton = document.getElementById("theme-toggle");
-  if (toggleButton) {
-    const toggleIcon = toggleButton.querySelector("i");
-    const htmlElement = document.documentElement;
+  const toggleButtonInline = document.getElementById("theme-toggle-inline");
+  const htmlElement = document.documentElement;
 
-    // Function to set theme
-    function setTheme(theme) {
-      htmlElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
+  // Function to set theme
+  function setTheme(theme) {
+    htmlElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
 
-      // Update icon
+    // Update all icons
+    const allToggles = document.querySelectorAll(".theme-toggle i, .theme-toggle-inline i");
+    allToggles.forEach(icon => {
       if (theme === "light") {
-        toggleIcon.classList.remove("fa-sun");
-        toggleIcon.classList.add("fa-moon");
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
       } else {
-        toggleIcon.classList.remove("fa-moon");
-        toggleIcon.classList.add("fa-sun");
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
       }
-    }
+    });
+  }
 
-    // Check local storage on load
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      setTheme("dark");
-    }
+  // Check local storage on load
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme("dark");
+  }
 
-    // Toggle event
+  // Toggle events for both buttons
+  if (toggleButton) {
     toggleButton.addEventListener("click", () => {
       const currentTheme = htmlElement.getAttribute("data-theme");
       const newTheme = currentTheme === "light" ? "dark" : "light";
       setTheme(newTheme);
     });
-  } else {
-    console.log("Theme toggle button not found on this page");
+  }
+
+  if (toggleButtonInline) {
+    toggleButtonInline.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const currentTheme = htmlElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      setTheme(newTheme);
+    });
   }
 });
 
 /* --- MOBILE MENU TOGGLE --- */
-const menuToggle = document.getElementById("menu-toggle");
+const menuToggleBtn = document.getElementById("menu-toggle");
+const menuToggleText = document.getElementById("menu-toggle-text");
 const mobileNav = document.getElementById("mobile-nav");
 
-menuToggle.addEventListener("click", () => {
+// Handle both hamburger and text menu buttons
+function toggleMenu() {
   mobileNav.classList.toggle("active");
-});
+  // Add animation to hamburger icon if it exists
+  if (menuToggleBtn && menuToggleBtn.classList.contains("menu-hamburger")) {
+    menuToggleBtn.classList.toggle("active");
+  }
+}
+
+if (menuToggleBtn) {
+  menuToggleBtn.addEventListener("click", toggleMenu);
+}
+
+if (menuToggleText) {
+  menuToggleText.addEventListener("click", toggleMenu);
+}
 
 // Fechar menu ao clicar em um item
-mobileNav.addEventListener("click", (e) => {
-  if (e.target.tagName === "LI") {
-    mobileNav.classList.remove("active");
-  }
-});
+if (mobileNav) {
+  const menuItems = mobileNav.querySelectorAll("a");
+  menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+      // Remove hamburger animation
+      if (menuToggleBtn && menuToggleBtn.classList.contains("menu-hamburger")) {
+        menuToggleBtn.classList.remove("active");
+      }
+      // Remove menu-text animation if it exists
+      if (menuToggleText) {
+        menuToggleText.classList.remove("active");
+      }
+    });
+  });
+}
 
 /* --- TOUCH SUPPORT FOR CAROUSEL --- */
 let startX = 0;

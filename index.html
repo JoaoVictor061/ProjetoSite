@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RD Representação Comercial - Esquadrias e janelas de alumínio de alta qualidade para residências e comerciais." />
+    <meta name="keywords" content="esquadrias, janelas, alumínio, representação comercial" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -11,12 +13,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -30,36 +26,49 @@
     <!-- NAVEGAÇÃO FIXA -->
     <header>
       <div class="header-inner">
-        <h1>RD Representação Comercial</h1>
+        <h1>RD Comercial</h1>
         <nav id="nav-menu">
           <ul>
-            <li>Home</li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="servicos.html">Serviços</a></li>
             <li><a href="https://wa.me/5561991675257?text=Olá!%20Vim%20pelo%20site" target="_blank">Fale Conosco</a></li>
           </ul>
         </nav>
         <div class="header-controls">
-          <button
-            id="theme-toggle"
-            class="theme-toggle"
-            aria-label="Alternar Tema"
-          >
+          <!-- Hamburger Menu (Mobile) + Theme Toggle -->
+          <button id="menu-toggle" class="menu-toggle menu-hamburger" aria-label="Abrir Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+          
+          <!-- Theme Toggle (Mobile) -->
+          <button id="theme-toggle" class="theme-toggle theme-mobile" aria-label="Alternar Tema">
             <i class="fas fa-sun"></i>
           </button>
-          <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
-            MENU
+          
+          <!-- Menu Text + Theme (Tablet/Desktop) -->
+          <button id="menu-toggle-text" class="menu-toggle menu-text" aria-label="Menu">
+            <span>MENU</span>
+            <button
+              id="theme-toggle-inline"
+              class="theme-toggle theme-toggle-inline"
+              aria-label="Alternar Tema"
+            >
+              <i class="fas fa-sun"></i>
+            </button>
           </button>
         </div>
-
-        <!-- Menu Móvel -->
-        <nav id="mobile-nav" class="mobile-nav">
-          <ul>
-            <li>Home</li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="https://wa.me/5561991675257?text=Olá!%20Vim%20pelo%20site" target="_blank">Fale Conosco</a></li>
-          </ul>
-        </nav>
       </div>
+
+      <!-- Menu Móvel -->
+      <nav id="mobile-nav" class="mobile-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="https://wa.me/5561991675257?text=Olá!%20Vim%20pelo%20site" target="_blank">Fale Conosco</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- SEÇÃO PRINCIPAL COM CARROSSEL DE PRODUTOS -->
@@ -75,8 +84,7 @@
               <h2>Porta de Correr</h2>
               <p class="description">
                 Porta de correr de alto padrão com acabamento em preto fosco,
-                projetada para varandas e áreas de lazer que exigem máxima
-                amplitude, beleza e durabilidade.
+                muita sofisticação.
               </p>
               <a href="servicos.html" class="information">Saiba Mais</a>
             </div>
@@ -93,8 +101,7 @@
               <h2>Vitrô 4 folhas</h2>
               <p class="description">
                 Janela de correr otimizada para bancadas, garantindo luz natural
-                e ventilação com um acabamento preto sofisticado que valoriza o
-                ambiente.
+                e ventilação com um acabamento preto sofisticado.
               </p>
               <a href="servicos.html" class="information">Saiba Mais</a>
             </div>
@@ -136,10 +143,6 @@
           <li></li>
           <li></li>
         </ul>
-      </div>
-
-      <div class="end">
-        <p class="description-end"></p>
       </div>
     </section>
 
@@ -258,8 +261,8 @@
           <div class="footer-column">
             <h4>Suporte</h4>
             <ul>
-              <li><a href="#contact">Fale Conosco</a></li>
-              <li><a href="#faq">Dúvidas Frequentes</a></li>
+              <li><a href="https://wa.me/5561991675257?text=Olá!%20Vim%20pelo%20site" target="_blank">Fale Conosco</a></li>
+              <li><a href="#">Dúvidas Frequentes</a></li>
             </ul>
           </div>
 

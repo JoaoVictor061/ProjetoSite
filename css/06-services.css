@@ -1,0 +1,250 @@
+/**
+ * @file 06-services.css
+ * @description Seções de Serviços (preview e galeria completa)
+ * Componentes: Services Preview, Services Gallery
+ */
+
+/* ============================================
+   SERVICES SECTION BASE
+   ============================================ */
+.services-preview,
+.services-section {
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-body) 100%
+  );
+  padding: var(--spacing-4xl) 0;
+  border-top: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+/* ============================================
+   SERVICES HEADER
+   ============================================ */
+.services-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.services-header h2 {
+  font-size: var(--font-size-2xl);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 2px;
+}
+
+.services-header p {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+/* ============================================
+   SERVICES GALLERY - Common Styles
+   ============================================ */
+.services-gallery-preview,
+.services-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: thick;
+  scrollbar-color: var(--color-primary) var(--bg-surface);
+}
+
+.services-gallery {
+  max-height: 800px;
+}
+
+/* Custom Scrollbar - WebKit Browsers */
+.services-gallery-preview::-webkit-scrollbar,
+.services-gallery::-webkit-scrollbar {
+  width: 12px;
+}
+
+.services-gallery-preview::-webkit-scrollbar-track,
+.services-gallery::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+  border-radius: 6px;
+}
+
+.services-gallery-preview::-webkit-scrollbar-thumb,
+.services-gallery::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 6px;
+  border: 2px solid var(--bg-surface);
+}
+
+.services-gallery-preview::-webkit-scrollbar-thumb:hover,
+.services-gallery::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* ============================================
+   SERVICE ITEM
+   ============================================ */
+.service-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color);
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 217, 61, 0.2);
+}
+
+/* ============================================
+   SERVICE IMAGE
+   ============================================ */
+.service-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform var(--transition-fast);
+}
+
+.service-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   SERVICE OVERLAY
+   ============================================ */
+.service-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: var(--spacing-lg);
+  transform: translateY(100%);
+  transition: transform var(--transition-fast);
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.service-item:hover .service-overlay {
+  transform: translateY(0);
+}
+
+.service-overlay h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.service-overlay p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+/* ============================================
+   RESPONSIVE: TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+  .services-header h2 {
+    font-size: 2rem;
+  }
+
+  .services-gallery-preview {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .services-preview,
+  .services-section {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .services-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-header p {
+    font-size: 0.9rem;
+  }
+
+  .services-gallery-preview {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    max-height: 500px;
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .service-item img {
+    height: 150px;
+  }
+
+  .service-overlay {
+    padding: var(--spacing-md);
+  }
+
+  .service-overlay h3 {
+    font-size: var(--font-size-base);
+  }
+
+  .service-overlay p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE SMALL
+   ============================================ */
+@media (max-width: 480px) {
+  .services-preview,
+  .services-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .services-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .services-gallery-preview {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+    max-height: 400px;
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+  }
+
+  .service-item img {
+    height: 120px;
+  }
+}

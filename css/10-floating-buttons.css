@@ -1,0 +1,104 @@
+/**
+ * @file 09-floating-buttons.css
+ * @description Botões flutuantes (WhatsApp e Instagram)
+ * Componente: Floating Action Buttons
+ */
+
+/* ============================================
+   FLOATING BUTTONS BASE
+   ============================================ */
+.btn-flutuante {
+  position: fixed;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 24px;
+  z-index: 9999;
+  transition: transform var(--transition-fast),
+    opacity var(--transition-fast),
+    box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-flutuante:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-flutuante:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   WHATSAPP BUTTON
+   ============================================ */
+.btn-flutuante.whatsapp {
+  bottom: 100px;
+  background-color: var(--color-whatsapp);
+}
+
+.btn-flutuante.whatsapp:hover {
+  filter: brightness(1.1);
+}
+
+/* ============================================
+   INSTAGRAM BUTTON
+   ============================================ */
+.btn-flutuante.instagram {
+  bottom: 30px;
+  background: var(--color-instagram);
+}
+
+.btn-flutuante.instagram:hover {
+  filter: brightness(1.1);
+}
+
+/* ============================================
+   RESPONSIVE: TABLET
+   ============================================ */
+@media (max-width: 768px) {
+  .btn-flutuante {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    right: 20px;
+  }
+
+  .btn-flutuante.whatsapp {
+    bottom: 90px;
+  }
+
+  .btn-flutuante.instagram {
+    bottom: 25px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE SMALL
+   ============================================ */
+@media (max-width: 480px) {
+  .btn-flutuante {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    right: 20px;
+  }
+
+  .btn-flutuante.whatsapp {
+    bottom: 90px;
+  }
+
+  .btn-flutuante.instagram {
+    bottom: 25px;
+  }
+}
