@@ -84,12 +84,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Check local storage on load
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme("dark");
-  }
+  // Comentado para forçar dark mode sempre
+  // const savedTheme = localStorage.getItem("theme");
+  // if (savedTheme) {
+  //   setTheme(savedTheme);
+  // } else {
+  //   setTheme("dark");
+  // }
+
+  // Força sempre dark mode ao carregar
+  setTheme("dark");
 
   // Toggle events for both buttons
   if (toggleButton) {

@@ -31,29 +31,32 @@
 /* 02. Reset e Estilos Base */
 @import url("./css/02-reset.css");
 
-/* 03. Classes Utilitárias */
+/* 03. Light Mode - Estilos específicos para tema claro */
+@import url("./css/03-light-mode.css");
+
+/* 04. Classes Utilitárias */
 @import url("./css/03-utilities.css");
 
-/* 04. Componente: Header & Navigation */
+/* 05. Componente: Header & Navigation */
 @import url("./css/04-header.css");
 
-/* 05. Componente: Hero Carousel */
+/* 06. Componente: Hero Carousel */
 @import url("./css/05-hero.css");
 
-/* 06. Componente: Services Galleries */
+/* 07. Componente: Services Galleries */
 @import url("./css/06-services.css");
 
-/* 07. Componente: About Company */
+/* 08. Componente: About Company */
 @import url("./css/07-about.css");
 
-/* 08. Componente: Buttons (CTA) */
+/* 09. Componente: Buttons (CTA) */
 @import url("./css/08-buttons.css");
 
-/* 09. Componente: Footer */
+/* 10. Componente: Footer */
 @import url("./css/09-footer.css");
 
-/* 10. Componente: Floating Buttons */
+/* 11. Componente: Floating Buttons */
 @import url("./css/10-floating-buttons.css");
 
-/* 11. Responsive Design - Media Queries */
+/* 12. Responsive Design - Media Queries */
 @import url("./css/11-responsive.css");
