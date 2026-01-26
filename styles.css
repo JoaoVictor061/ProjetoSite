@@ -1060,21 +1060,7 @@ section .list .item.active .content .information {
     font-size: 1.2rem;
   }
 
-  .feature-card {
-    padding: 20px;
-  }
 
-  .feature-card i {
-    font-size: 2rem;
-  }
-
-  .feature-card h4 {
-    font-size: 1rem;
-  }
-
-  .feature-card p {
-    font-size: 0.85rem;
-  }
 
   .footer-main {
     gap: 30px;
