@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleButton.addEventListener("click", () => {
       const currentTheme = htmlElement.getAttribute("data-theme");
       const newTheme = currentTheme === "light" ? "dark" : "light";
-      console.log("Theme toggle clicked, current:", currentTheme, "new:", newTheme);
       setTheme(newTheme);
     });
   } else {
