@@ -1,0 +1,222 @@
+/**
+ * @file 03-light-mode.css
+ * @description Estilos específicos para Light Mode
+ * Destaca elementos principales para melhor contraste e legibilidade
+ */
+
+/* ============================================
+   HEADINGS - PRETO PURO
+   ============================================ */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6 {
+  color: #000000;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] h3 {
+  color: #1a1a1a;
+}
+
+/* ============================================
+   NAVEGAÇÃO - DESTAQUE MÁXIMO
+   ============================================ */
+[data-theme="light"] header nav ul li a {
+  color: #1a1a1a;
+  font-weight: var(--font-weight-bold);
+}
+
+[data-theme="light"] header nav ul li a:hover {
+  color: var(--color-primary);
+}
+
+[data-theme="light"] header nav ul li.active a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-heavy);
+}
+
+/* ============================================
+   MOBILE MENU - ITENS COM DESTAQUE
+   ============================================ */
+[data-theme="light"] .mobile-nav ul li a {
+  color: #1a1a1a;
+  font-weight: var(--font-weight-bold);
+}
+
+[data-theme="light"] .mobile-nav ul li a:hover {
+  color: var(--color-primary);
+  background-color: rgba(230, 184, 0, 0.1);
+}
+
+/* ============================================
+   HERO - TÍTULOS DAS IMAGENS
+   ============================================ */
+[data-theme="light"] .content .win-information {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .content h2 {
+  color: #000000;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .content .description {
+  color: #4a4a4a;
+}
+
+/* ============================================
+   SERVIÇOS - TITLES
+   ============================================ */
+[data-theme="light"] .services-header h2 {
+  color: #000000;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .services-header p {
+  color: #4a4a4a;
+}
+
+[data-theme="light"] .service-overlay h3 {
+  color: #000000;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .service-overlay p {
+  color: #4a4a4a;
+}
+
+/* ============================================
+   ABOUT - SOBRE RD
+   ============================================ */
+[data-theme="light"] .about-header h2 {
+  color: #000000;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .about-header p {
+  color: #4a4a4a;
+}
+
+[data-theme="light"] .about-text h3 {
+  color: #1a1a1a;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .about-text p {
+  color: #4a4a4a;
+}
+
+/* ============================================
+   FOOTER - RODAPÉ
+   ============================================ */
+[data-theme="light"] .footer-brand h3 {
+  color: #000000;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .footer-brand p {
+  color: #4a4a4a;
+}
+
+[data-theme="light"] .footer-column h4,
+[data-theme="light"] .footer-social h4 {
+  color: #000000;
+  font-weight: var(--font-weight-heavy);
+}
+
+[data-theme="light"] .footer a,
+[data-theme="light"] .footer-links a {
+  color: #1a1a1a;
+  font-weight: var(--font-weight-normal);
+}
+
+[data-theme="light"] .footer a:hover,
+[data-theme="light"] .footer-links a:hover {
+  color: var(--color-primary);
+}
+
+[data-theme="light"] .footer-bottom p {
+  color: #4a4a4a;
+}
+
+/* ============================================
+   BOTÕES - DESTAQUE MÁXIMO
+   ============================================ */
+[data-theme="light"] .information {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: transparent;
+}
+
+[data-theme="light"] .information:hover {
+  color: #000000;
+  background: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(230, 184, 0, 0.4);
+}
+
+/* ============================================
+   LABELS E TEXTOS SECUNDÁRIOS
+   ============================================ */
+[data-theme="light"] label,
+[data-theme="light"] .label {
+  color: #1a1a1a;
+  font-weight: var(--font-weight-normal);
+}
+
+[data-theme="light"] .text-muted {
+  color: #4a4a4a;
+}
+
+/* ============================================
+   OVERLAY E DESTAQUES
+   ============================================ */
+[data-theme="light"] .service-overlay {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+[data-theme="light"] .service-overlay h3,
+[data-theme="light"] .service-overlay p {
+  color: #ffffff;
+}
+
+/* ============================================
+   THEME TOGGLE - ÍCONE DA LUA/SOL
+   ============================================ */
+[data-theme="light"] .theme-toggle {
+  color: var(--color-primary);
+  background: rgba(230, 184, 0, 0.1);
+  border-radius: var(--border-radius-full);
+  padding: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background-color: rgba(230, 184, 0, 0.2);
+  color: #000000;
+  transform: rotate(15deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(230, 184, 0, 0.3);
+}
+
+[data-theme="light"] .theme-mobile {
+  color: var(--color-primary);
+  background: rgba(230, 184, 0, 0.1);
+}
+
+[data-theme="light"] .theme-mobile:hover {
+  background: rgba(230, 184, 0, 0.2);
+  color: #000000;
+}
+
+[data-theme="light"] .theme-toggle-inline {
+  color: var(--color-primary);
+  padding: 0 var(--spacing-xs);
+}
+
+[data-theme="light"] .theme-toggle-inline:hover {
+  color: #000000;
+  transform: rotate(15deg) scale(1.1);
+}

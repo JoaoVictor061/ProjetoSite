@@ -1,0 +1,128 @@
+/**
+ * @file 08-buttons.css
+ * @description Estilos profissionais para botões em todo o site
+ * Componentes: CTA Buttons (Call-to-Action)
+ */
+
+/* ============================================
+   BOTÃO DE AÇÃO GERAL (.information)
+   ============================================ */
+.information {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de Hover - Preenchimento animado */
+.information::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  z-index: -1;
+  transition: left var(--transition-fast);
+}
+
+.information:hover {
+  color: var(--text-inverse);
+  box-shadow: 0 8px 24px rgba(255, 217, 61, 0.3);
+  transform: translateY(-2px);
+}
+
+.information:hover::before {
+  left: 0;
+}
+
+.information:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(255, 217, 61, 0.2);
+}
+
+/* ============================================
+   VARIAÇÃO: BOTÃO PRIMÁRIO (Destaque)
+   ============================================ */
+.information.primary {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+  border-color: var(--color-primary);
+}
+
+.information.primary::before {
+  background: rgba(255, 217, 61, 0.9);
+}
+
+.information.primary:hover {
+  background: var(--color-primary);
+  color: var(--text-inverse);
+  box-shadow: 0 12px 32px rgba(255, 217, 61, 0.4);
+}
+
+/* ============================================
+   VARIAÇÃO: BOTÃO SECUNDÁRIO
+   ============================================ */
+.information.secondary {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.information.secondary::before {
+  background: var(--color-secondary);
+}
+
+.information.secondary:hover {
+  color: var(--text-inverse);
+  box-shadow: 0 8px 24px rgba(168, 169, 173, 0.3);
+}
+
+/* ============================================
+   TAMANHOS DOS BOTÕES
+   ============================================ */
+.information.sm {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+.information.lg {
+  padding: 14px 32px;
+  font-size: var(--font-size-base);
+}
+
+/* ============================================
+   DESABILITADO
+   ============================================ */
+.information:disabled,
+.information.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  color: var(--text-muted);
+  border-color: var(--text-muted);
+}
+
+.information:disabled::before,
+.information.disabled::before {
+  background: transparent;
+}
+
+.information:disabled:hover,
+.information.disabled:hover {
+  transform: none;
+  box-shadow: none;
+  color: var(--text-muted);
+}

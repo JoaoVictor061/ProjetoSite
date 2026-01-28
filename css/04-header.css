@@ -1,0 +1,545 @@
+/**
+ * @file 04-header.css
+ * @description Estilos do header, navegação e menu móvel
+ * Componente: Header Navigation
+ *
+ * BREAKPOINTS IMPLEMENTADOS:
+ * ├─ 320px - 359px:  Mobile Pequeno (iPhone SE, 5S)
+ * ├─ 360px - 480px:  Mobile Padrão (Android, iPhone 6-14)
+ * ├─ 481px - 768px:  Tablet/Phablet (iPad Mini, Galaxy Tab)
+ * ├─ 769px - 1024px: Tablet Grande (iPad, iPad Air)
+ * └─ 1025px+:        Desktop (Monitores)
+ *
+ * ESTRATÉGIA: Mobile-First
+ * - Começa otimizado para mobile pequeno (320px)
+ * - Progressivamente melhora para maiores
+ * - Usa min-width/max-width para precisão
+ */
+
+/* ============================================
+   HEADER BASE
+   ============================================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  background: var(--bg-header);
+  backdrop-filter: blur(10px);
+  border-bottom: var(--border-width) solid var(--border-color);
+  transition: background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ============================================
+   HEADER LOGO
+   ============================================ */
+header h1 {
+  font-size: var(--font-size-xl);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+header h1.gradient-text {
+  animation: gradientShift 5s ease infinite;
+}
+
+/* ============================================
+   DESKTOP NAVIGATION
+   ============================================ */
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  gap: var(--spacing-2xl);
+}
+
+header nav ul li {
+  color: var(--text-main);
+  font-weight: var(--font-weight-normal);
+  transition: color var(--transition-fast);
+  cursor: pointer;
+}
+
+header nav ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  transition: color var(--transition-fast);
+}
+
+header nav ul li:hover,
+header nav ul li a:hover {
+  color: var(--color-primary);
+}
+
+header nav ul li.active,
+header nav ul li.active a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ============================================
+   HEADER CONTROLS (Theme Toggle + Menu)
+   ============================================ */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* ============================================
+   MOBILE NAVIGATION
+   ============================================ */
+.mobile-nav {
+  display: block;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  background: var(--bg-header);
+  backdrop-filter: blur(10px);
+  border-bottom: var(--border-width) solid var(--border-color);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  z-index: 999;
+  max-height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+}
+
+.mobile-nav.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: var(--spacing-md) 0;
+  margin: 0;
+}
+
+.mobile-nav ul li {
+  color: var(--text-main);
+  font-weight: var(--font-weight-normal);
+  padding: var(--spacing-lg) var(--spacing-md);
+  transition: background-color var(--transition-fast);
+  border-bottom: var(--border-width) solid var(--border-color);
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+}
+
+.mobile-nav ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: var(--spacing-sm) 0;
+  font-size: 1rem;
+}
+
+.mobile-nav ul li:hover,
+.mobile-nav ul li a:hover {
+  background-color: var(--bg-surface);
+  color: var(--color-primary);
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON
+   ============================================ */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-surface);
+  color: var(--color-primary);
+  transform: rotate(15deg);
+}
+
+/* Theme toggle mobile (visible on mobile) */
+.theme-mobile {
+  display: none;
+  padding: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+/* Theme toggle inline (within menu button) */
+.theme-toggle-inline {
+  padding: 0;
+  font-size: var(--font-size-lg);
+  margin-left: var(--spacing-xs);
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-inline:hover {
+  color: var(--color-primary);
+  transform: rotate(15deg);
+}
+
+/* ============================================
+   MENU TOGGLE BUTTON
+   ============================================ */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle:hover {
+  color: var(--color-primary);
+}
+
+/* Hamburger Menu Style (Mobile) */
+.menu-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.menu-hamburger:hover .hamburger-line {
+  background-color: var(--color-primary);
+}
+
+/* Hamburger animation when active */
+.menu-hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.menu-hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Menu Text Style (Tablet/Desktop) */
+.menu-text {
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-bold);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  gap: var(--spacing-sm);
+}
+
+.menu-text:hover {
+  background-color: var(--bg-surface);
+}
+
+.menu-text span {
+  display: block;
+}
+
+/* Theme toggle inline with menu button */
+.theme-toggle-inline {
+  padding: 0;
+  font-size: var(--font-size-lg);
+  margin-left: var(--spacing-xs);
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-inline:hover {
+  color: var(--color-primary);
+  transform: rotate(15deg);
+}
+
+/* ============================================
+   RESPONSIVE: DESKTOP (1025px+)
+   ============================================ */
+@media (min-width: 1025px) {
+  /* Show desktop navigation */
+  header nav {
+    display: flex;
+  }
+
+  /* Hide all mobile/tablet buttons */
+  .menu-hamburger {
+    display: none !important;
+  }
+
+  .menu-text {
+    display: none !important;
+  }
+
+  .theme-mobile {
+    display: none !important;
+  }
+
+  /* Hide mobile menu */
+  .mobile-nav {
+    display: none !important;
+  }
+
+  /* Show desktop theme toggle inline */
+  .theme-toggle-inline {
+    display: flex;
+  }
+}
+
+/* ============================================
+   RESPONSIVE: TABLET (769px - 1024px)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Hide desktop navigation */
+  header nav {
+    display: none;
+  }
+
+  /* Show menu text button on tablet */
+  .menu-text {
+    display: flex;
+  }
+
+  /* Hide hamburger on tablet */
+  .menu-hamburger {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .menu-text {
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE PADRÃO (481px - 768px)
+   ============================================ */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Hide desktop navigation */
+  header nav {
+    display: none;
+  }
+
+  /* Show menu text button */
+  .menu-text {
+    display: flex;
+  }
+
+  /* Hide hamburger */
+  .menu-hamburger {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-controls {
+    gap: var(--spacing-sm);
+  }
+
+  .menu-text {
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .theme-toggle-inline {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE PEQUENO (320px - 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  header {
+    height: 70px;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+
+  .header-inner {
+    padding: 0 12px;
+  }
+
+  .header-controls {
+    gap: 8px;
+  }
+
+  /* Show hamburger icon on mobile pequeno */
+  .menu-hamburger {
+    display: flex;
+    width: 36px;
+    height: 36px;
+  }
+
+  .hamburger-line {
+    width: 20px;
+    height: 2px;
+    gap: 5px;
+  }
+
+  /* Hide menu text button on mobile */
+  .menu-text {
+    display: none !important;
+  }
+
+  /* Show theme toggle on mobile */
+  .theme-mobile {
+    display: flex;
+  }
+
+  /* Adjust theme toggle inline on mobile */
+  .theme-toggle-inline {
+    display: none;
+  }
+
+  .mobile-nav ul li {
+    padding: var(--spacing-md) 12px;
+    font-size: 1rem;
+  }
+
+  .mobile-nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE PEQUENO (320px - 359px)
+   iPhone SE, iPhone 5/5S, modelos antigos
+   ============================================ */
+@media (max-width: 360px) {
+  header {
+    height: 64px;
+  }
+
+  header h1 {
+    font-size: 1rem;
+    letter-spacing: 0.25px;
+  }
+
+  .header-inner {
+    padding: 0 10px;
+  }
+
+  .header-controls {
+    gap: 6px;
+  }
+
+  /* Hamburguer otimizado para telas pequenas */
+  .menu-hamburger {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+  }
+
+  .hamburger-line {
+    width: 18px;
+    height: 2px;
+    gap: 4px;
+  }
+
+  .menu-hamburger:hover {
+    background-color: transparent;
+  }
+
+  .menu-hamburger:active {
+    transform: scale(0.95);
+  }
+
+  /* Menu mobile otimizado */
+  .mobile-nav ul li {
+    padding: var(--spacing-xs) 10px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-nav ul li a {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  /* Logo menor */
+  header h1 {
+    font-size: 0.95rem;
+    letter-spacing: 0;
+  }
+
+  /* Hide parte "Comercial" usando CSS (apenas "RD" visível) */
+  header h1::after {
+    content: "RD";
+    position: absolute;
+    left: 10px;
+    font-size: 0.95rem;
+  }
+
+  header h1 {
+    color: transparent;
+    width: 40px;
+  }
+
+  header h1::after {
+    color: var(--text-main);
+  }
+
+  /* Theme toggle mobile smaller */
+  .theme-mobile {
+    padding: 4px;
+    font-size: 0.9rem;
+  }
+}

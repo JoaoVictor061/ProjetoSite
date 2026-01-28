@@ -1,0 +1,394 @@
+/**
+ * @file 10-responsive.css
+ * @description Media queries consolidadas
+ * Organiza todos os breakpoints em um único arquivo para fácil manutenção
+ */
+
+/* ============================================
+   BREAKPOINTS
+   ============================================ */
+/* 
+  Mobile-First Approach:
+  - Base: Mobile (< 480px)
+  - Small: 480px - 767px
+  - Tablet: 768px - 1023px
+  - Desktop: 1024px+
+*/
+
+/* ============================================
+   TABLET: 768px e abaixo
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --container-width: 100%;
+  }
+
+  /* Header */
+  header nav {
+    display: none;
+  }
+
+  /* Hero */
+  section .list .item .content h2 {
+    font-size: 3rem;
+  }
+
+  /* Services */
+  .services-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .services-header p {
+    font-size: 0.9rem;
+  }
+
+  .services-gallery-preview {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    max-height: 500px;
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .service-item img {
+    height: 150px;
+  }
+
+  .service-overlay {
+    padding: 15px;
+  }
+
+  .service-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .service-overlay p {
+    font-size: 0.8rem;
+  }
+
+  /* About */
+  .about-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .about-text p {
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer-main {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-column a:hover {
+    padding-left: 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   MOBILE SMALL: 480px e abaixo
+   ============================================ */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 15px;
+    --header-height: 70px;
+  }
+
+  /* Header */
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  /* Hero */
+  section {
+    padding-top: var(--header-height);
+  }
+
+  section .list .item .content h2 {
+    font-size: 2.5rem;
+  }
+
+  section .list .item .content .description {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  section .list .item .content .information {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .arrows button {
+    width: 45px;
+    height: 45px;
+  }
+
+  .arrows button img {
+    width: 18px;
+  }
+
+  .indicators .number {
+    font-size: 2rem;
+  }
+
+  .item-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .win-img {
+    height: 300px;
+    justify-content: center;
+  }
+
+  .list .item .content {
+    align-items: center;
+    padding-left: 0;
+    gap: 10px;
+  }
+
+  /* Services */
+  .services-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .services-header p {
+    font-size: 0.9rem;
+  }
+
+  .services-gallery-preview {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    max-height: 400px;
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .service-item img {
+    height: 120px;
+  }
+
+  /* About */
+  .about-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer-main {
+    gap: 30px;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.85rem;
+  }
+
+  .footer-column h4,
+  .footer-social h4 {
+    font-size: 0.9rem;
+  }
+
+  .footer a,
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+
+  .social-icons a {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .footer-bottom p,
+  .footer-links a {
+    font-size: 0.75rem;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  /* Floating Buttons */
+  .btn-flutuante {
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  .btn-flutuante.whatsapp {
+    bottom: 90px;
+  }
+
+  .btn-flutuante.instagram {
+    bottom: 25px;
+  }
+
+  /* Arrows */
+  .arrows {
+    left: var(--container-padding);
+    width: calc(100% - 2 * var(--container-padding));
+    transform: none;
+  }
+
+  .arrows #prev {
+    margin-left: 0;
+  }
+
+  .arrows #next {
+    margin-right: 0;
+  }
+
+  .indicators {
+    bottom: 20px;
+  }
+}
+
+/* ============================================
+   TABLET LANDSCAPE: 1024px
+   ============================================ */
+@media (max-width: 1024px) {
+  :root {
+    --container-width: 90%;
+  }
+
+  section .list .item .content h2 {
+    font-size: 4rem;
+  }
+
+  .services-header h2 {
+    font-size: 2rem;
+  }
+
+  .services-gallery-preview {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE: 1440px+
+   ============================================ */
+@media (min-width: 1440px) {
+  :root {
+    --container-width: 1400px;
+  }
+
+  section .list .item .content h2 {
+    font-size: 4.5rem;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  header,
+  footer,
+  .btn-flutuante {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: blue;
+  }
+}
+
+/* ============================================
+   PREFERS REDUCED MOTION (Accessibility)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   DARK COLOR SCHEME (Sistema Operacional)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #0f0f10;
+    --text-main: #e0e0e0;
+  }
+}
+
+/* ============================================
+   LIGHT COLOR SCHEME (Sistema Operacional)
+   ============================================ */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-body: #ffffff;
+    --text-main: #1a1a1b;
+  }
+}

@@ -1,0 +1,147 @@
+/**
+ * @file 07-about.css
+ * @description Seção sobre a empresa
+ * Componente: About Company
+ */
+
+/* ============================================
+   ABOUT SECTION BASE
+   ============================================ */
+.about-company {
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-body) 100%
+  );
+  padding: var(--spacing-4xl) 0;
+  border-top: var(--border-width) solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
+  transition: background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+/* ============================================
+   ABOUT CONTAINER
+   ============================================ */
+.about-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ============================================
+   ABOUT HEADER
+   ============================================ */
+.about-header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.about-header h2 {
+  font-size: var(--font-size-2xl);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: 2px;
+}
+
+.about-header .about-divider {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary),
+    transparent
+  );
+  margin: 0 auto;
+}
+
+/* ============================================
+   ABOUT CONTENT
+   ============================================ */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin-bottom: var(--spacing-lg);
+  font-weight: var(--font-weight-heavy);
+  text-align: center;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   RESPONSIVE: TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+  .about-content {
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .about-company {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .about-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .about-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .about-text p {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVE: MOBILE SMALL
+   ============================================ */
+@media (max-width: 480px) {
+  .about-company {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .about-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
